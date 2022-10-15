@@ -31,6 +31,15 @@ public class Match {
 	@Column(name = "STATUS")
 	private String status;
 
+	public Match() {}
+	public Match(String homeTeam, int homeTeamScore, String awayTeam, int awayTeamScore) {
+		this.homeTeam = homeTeam;
+		this.awayTeam = awayTeam;
+		this.homeTeamScore = homeTeamScore;
+		this.awayTeamScore = awayTeamScore;
+		this.status="Running";
+	}
+	
 	public String getHomeTeam() {
 		return homeTeam;
 	}
