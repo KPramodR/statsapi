@@ -38,8 +38,8 @@ public class MatchController {
 		return matchRepo.save(tempMatch);
 	}
 	
-	@PutMapping("/match/{id}")
-	public ResponseEntity < Match > updateMatch(@PathVariable(value = "id") Long matchId, @RequestBody Match matchDetails) {
+	@PutMapping("/updatematch/{id}")
+	public ResponseEntity < Match > updateMatchScore(@PathVariable(value = "id") Long matchId, @RequestBody Match matchDetails) {
 		Optional<Match> matchObject = matchRepo.findById(matchId);
 		Match match = matchObject.get();
 		match.setHomeTeamScore(matchDetails.getHomeTeamScore());
@@ -49,7 +49,7 @@ public class MatchController {
 	}
 	
 	@PutMapping("/finishMatch/{id}")
-	public ResponseEntity < Match > updateMatch(@PathVariable(value = "id") Long matchId) {
+	public ResponseEntity < Match > updateMatchStatus(@PathVariable(value = "id") Long matchId) {
 		Optional<Match> matchObject = matchRepo.findById(matchId);
 		Match match = matchObject.get();
 		match.setStatus("Finished");
@@ -60,16 +60,16 @@ public class MatchController {
 	@GetMapping("/runningmatches")
 	public ResponseEntity<?> getAllRunningMatches() {
 		List<Match> matches = matchRepo.findRunningMatches();
-		MatchDto matchDTO = new MatchDto(); 
-		matchDTO.setMatches(matches);
-		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
+		//MatchDto matchDTO = new MatchDto(); 
+		//matchDTO.setMatches(matches);
+		return new ResponseEntity<List<Match>>(matches, HttpStatus.OK);
 	}
 	
 	@GetMapping("/matchsummary")
 	public ResponseEntity<?> getMatchesSummary() {
 		List<Match> matches = matchRepo.findMatchSummary();
-		MatchDto matchDTO = new MatchDto(); 
-		matchDTO.setMatches(matches);
-		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
+		//MatchDto matchDTO = new MatchDto(); 
+		//matchDTO.setMatches(matches);
+		return new ResponseEntity<List<Match>>(matches, HttpStatus.OK);
 	}
 }

@@ -32,6 +32,7 @@ public class Match {
 	private String status;
 
 	public Match() {}
+	
 	public Match(String homeTeam, int homeTeamScore, String awayTeam, int awayTeamScore) {
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
