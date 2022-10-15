@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.sportradar.statsapi.StatsapiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.898 s <<< FAILURE! - in com.sportradar.statsapi.StatsapiApplicationTests
+com.sportradar.statsapi.StatsapiApplicationTests  Time elapsed: 0.896 s  <<< ERROR!
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [C:\My Projects\new\statsapi\target\test-classes\com\sportradar\statsapi\StatsapiApplicationTests.class]; nested exception is org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\My Projects\new\statsapi\target\test-classes\com\sportradar\statsapi\StatsapiApplicationTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 61
+Caused by: org.springframework.core.NestedIOException: ASM ClassReader failed to parse class file - probably due to a new Java class file version that isn't supported yet: file [C:\My Projects\new\statsapi\target\test-classes\com\sportradar\statsapi\StatsapiApplicationTests.class]; nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 61
+Caused by: java.lang.IllegalArgumentException: Unsupported class file major version 61
+

@@ -1,0 +1,6 @@
+com\sportradar\statsapi\dto\MatchDto.class
+com\sportradar\statsapi\StatsapiApplication.class
+com\sportradar\statsapi\controller\MatchController.class
+com\sportradar\statsapi\entity\Match.class
+com\sportradar\statsapi\main\SpringFoxConfig.class
+com\sportradar\statsapi\repo\MatchRepository.class
