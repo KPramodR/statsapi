@@ -27,25 +27,15 @@ public class MatchController {
 	@Autowired
 	private MatchRepository matchRepo;
 	
-	@GetMapping("/runningmatches")
-	public ResponseEntity<?> getAllRunningMatches() {
-		List<Match> matches = matchRepo.findRunningMatches();
-		MatchDto matchDTO = new MatchDto(); 
-		matchDTO.setMatches(matches);
-		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
-	}
-	
-	@GetMapping("/matchsummary")
-	public ResponseEntity<?> getMatchesSummary() {
-		List<Match> matches = matchRepo.findMatchSummary();
-		MatchDto matchDTO = new MatchDto(); 
-		matchDTO.setMatches(matches);
-		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
-	}
-	
 	@PostMapping("/addmatch")
 	public Match addMatch(@RequestBody Match match) {
-		return matchRepo.save(match);
+		Match tempMatch = new Match();
+		tempMatch.setHomeTeam(match.getHomeTeam());
+		tempMatch.setAwayTeam(match.getAwayTeam());
+		tempMatch.setHomeTeamScore(0);
+		tempMatch.setAwayTeamScore(0);
+		tempMatch.setStatus("Running");
+		return matchRepo.save(tempMatch);
 	}
 	
 	@PutMapping("/match/{id}")
@@ -65,5 +55,21 @@ public class MatchController {
 		match.setStatus("Finished");
 	    final Match updatedMatch = matchRepo.save(match);
         return ResponseEntity.ok(updatedMatch);
+	}
+	
+	@GetMapping("/runningmatches")
+	public ResponseEntity<?> getAllRunningMatches() {
+		List<Match> matches = matchRepo.findRunningMatches();
+		MatchDto matchDTO = new MatchDto(); 
+		matchDTO.setMatches(matches);
+		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping("/matchsummary")
+	public ResponseEntity<?> getMatchesSummary() {
+		List<Match> matches = matchRepo.findMatchSummary();
+		MatchDto matchDTO = new MatchDto(); 
+		matchDTO.setMatches(matches);
+		return new ResponseEntity<MatchDto>(matchDTO, HttpStatus.OK);
 	}
 }
