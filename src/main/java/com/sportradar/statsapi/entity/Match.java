@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author pkini
+ *
+ */
 @Entity
 @Table(name = "MATCH")
 public class Match {
@@ -81,10 +85,9 @@ public class Match {
 		this.awayTeamScore = awayTeamScore;
 	}
 
-	public String isStatus() {
+	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}

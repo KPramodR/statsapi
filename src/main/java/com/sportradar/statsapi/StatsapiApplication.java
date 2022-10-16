@@ -3,6 +3,10 @@ package com.sportradar.statsapi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author pkininge
+ *
+ */
 @SpringBootApplication
 public class StatsapiApplication {
 

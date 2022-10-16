@@ -8,11 +8,21 @@ import org.springframework.stereotype.Repository;
 
 import com.sportradar.statsapi.entity.Match;
 
+/**
+ * @author pkini
+ *
+ */
 @Repository
 public interface MatchRepository extends JpaRepository<Match, Long>{
+	/**
+	 * @return
+	 */
 	@Query("SELECT t FROM Match t WHERE t.status='Running'")
 	List<Match> findRunningMatches();
 
-	@Query("SELECT t FROM Match t WHERE t.status='Finished'")
+	/**
+	 * @return
+	 */
+	@Query("SELECT t FROM Match t WHERE t.status='Finished' order by ID asc" )
 	List<Match> findMatchSummary();
 }
