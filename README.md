@@ -2,7 +2,7 @@ This is a Demo API created to handle Match object and some of its associated bas
 
 ![image](https://user-images.githubusercontent.com/115825104/196260152-31007322-2edb-4db8-a9ef-4fdb39665104.png)
 
-1. The code is developed in spring boot as a REST API which is exposing its API's at "http://localhost:8080/api".
+1. The code is developed in spring boot(jdk-15.0.2) as a REST API which is exposing its API's at "http://localhost:8080/api".
 2. Swagger API helps to display the API and quickly test them in an ongoing basis. The swagger UI can be accessed at "http://localhost:8080/swagger-ui/".
 
 ![image](https://user-images.githubusercontent.com/115825104/196259651-bffcea97-acdd-46dc-b6fa-122bd1d70977.png)
